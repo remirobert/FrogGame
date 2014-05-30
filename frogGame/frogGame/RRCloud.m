@@ -94,7 +94,7 @@
     }
     
     if (currentTime >= _timerBigDrop) {
-        if (rand() % 3 == 2) {
+        if (rand() % 8 == 7) {
             SKSpriteNode *drop = [RRDrop createBigDropWater:_cloud];
         
             [parentScene addChild:drop];
@@ -108,14 +108,16 @@
     }
     
     if (currentTime >= _timerMiddleDrop) {
-        SKSpriteNode *drop = [RRDrop createMiddleDropWater:_cloud];
+        if (rand() % 4 == 3) {
+            SKSpriteNode *drop = [RRDrop createMiddleDropWater:_cloud];
         
-        [parentScene addChild:drop];
-        [drop runAction:[SKAction moveToY:0
-                                 duration:(1 + (float) (rand()) / ((float)(RAND_MAX / (2 - 1))))]
-             completion:^{
-                 [drop removeFromParent];
+            [parentScene addChild:drop];
+            [drop runAction:[SKAction moveToY:0
+                                     duration:(1 + (float) (rand()) / ((float)(RAND_MAX / (2 - 1))))]
+                 completion:^{
+                     [drop removeFromParent];
              }];
+        }
         _timerMiddleDrop = (4 + (float) (rand()) / ((float)(RAND_MAX / (6.5 - 4)))) + currentTime;
     }
 }

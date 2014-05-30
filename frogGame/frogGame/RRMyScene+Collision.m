@@ -65,7 +65,6 @@
             [node removeFromParent];
             self.speed = 0.0;
             
-            NSLog(@"score = %ld", (long)[RRGameData DefaultData].score);
             [[RRGameData DefaultData] setIsOver:YES];
             
             RRMainMenu *menu = [[RRMainMenu alloc] initWithSize:self.size];

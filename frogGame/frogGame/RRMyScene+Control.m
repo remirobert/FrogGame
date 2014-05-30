@@ -17,7 +17,6 @@
 
 - (void) updatePositionFrog {
     if ([RRGameData DefaultData].isOver == YES) {
-        NSLog(@"over = YES");
         return ;
     }
     
