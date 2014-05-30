@@ -8,6 +8,7 @@
 
 #import "RRMyScene+Collision.h"
 #import "RRMainMenu.h"
+#import "RRGameData.h"
 
 @implementation RRMyScene (Collision)
 
@@ -16,6 +17,8 @@
         
         if ([node intersectsNode:self.frog.collisionBox] == YES) {
             [node removeFromParent];
+            
+            [RRGameData DefaultData].score += 1;
             
             if ([self.frog.node actionForKey:@"drinkwater"] == nil)
                 [self.frog.node runAction:[SKAction
@@ -31,6 +34,8 @@
         if ([node intersectsNode:self.frog.collisionBox] == YES) {
             [node removeFromParent];
             self.speed = 0.0;
+            
+            NSLog(@"score = %ld", (long)[RRGameData DefaultData].score);
             
             RRMainMenu *menu = [[RRMainMenu alloc] initWithSize:self.size];
             [self.view presentScene:menu transition:[SKTransition fadeWithDuration:1.0]];

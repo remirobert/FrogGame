@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A538AAE81938A1DB00A07AE3 /* RRGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = A538AAE71938A1DB00A07AE3 /* RRGameData.m */; };
 		A5BCA86619371B1E0009B9E5 /* RRMyScene+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCA86519371B1E0009B9E5 /* RRMyScene+Collision.m */; };
 		A5BCA86B193721DC0009B9E5 /* RRMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCA86A193721DC0009B9E5 /* RRMainMenu.m */; };
 		A5BD5C781933CD29003AE760 /* RRSeaGull.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BD5C771933CD29003AE760 /* RRSeaGull.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A538AAE61938A1DB00A07AE3 /* RRGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGameData.h; sourceTree = "<group>"; };
+		A538AAE71938A1DB00A07AE3 /* RRGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGameData.m; sourceTree = "<group>"; };
 		A5BCA86419371B1E0009B9E5 /* RRMyScene+Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RRMyScene+Collision.h"; sourceTree = "<group>"; };
 		A5BCA86519371B1E0009B9E5 /* RRMyScene+Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RRMyScene+Collision.m"; sourceTree = "<group>"; };
 		A5BCA869193721DC0009B9E5 /* RRMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMainMenu.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 			children = (
 				A5DBE6F71930D34F001876B9 /* RRAppDelegate.h */,
 				A5DBE6F81930D34F001876B9 /* RRAppDelegate.m */,
+				A538AAE61938A1DB00A07AE3 /* RRGameData.h */,
+				A538AAE71938A1DB00A07AE3 /* RRGameData.m */,
 				A5079BCE193675EE00DCDE1C /* StoryBoard */,
 				A5079BCF193675FF00DCDE1C /* Controllers */,
 				A5BCA868193721BF0009B9E5 /* Menu */,
@@ -364,6 +369,7 @@
 				A5BCA86619371B1E0009B9E5 /* RRMyScene+Collision.m in Sources */,
 				A5DBE7051930D34F001876B9 /* RRMyScene.m in Sources */,
 				A5BF64B61931EF490062721F /* RRMyScene+Cloud.m in Sources */,
+				A538AAE81938A1DB00A07AE3 /* RRGameData.m in Sources */,
 				A5BCA86B193721DC0009B9E5 /* RRMainMenu.m in Sources */,
 				A5DBE7021930D34F001876B9 /* RRViewController.m in Sources */,
 				A5BF64BD19320C4B0062721F /* RRCloud.m in Sources */,

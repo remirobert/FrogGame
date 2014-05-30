@@ -12,6 +12,7 @@
 #import "RRMyScene+Cloud.h"
 #import "RRMyScene+Collision.h"
 #import "RRSeaGull.h"
+#import "RRGameData.h"
 
 @interface RRMyScene ()
 @property (nonatomic, strong) NSMutableArray *clouds;
@@ -45,6 +46,8 @@
         [self initWave];
                 
         _clouds = [[NSMutableArray alloc] init];
+        
+        [RRGameData DefaultData].score = 0;
     }
     return self;
 }
