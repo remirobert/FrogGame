@@ -34,7 +34,6 @@
                                           (self.motionManager.accelerometerData.acceleration.y * 15),
                                           self.frog.node.position.y);
     
-    
     [self.frog updatePositionCollisionMask];
 }
 

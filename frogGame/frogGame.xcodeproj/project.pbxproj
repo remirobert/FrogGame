@@ -16,6 +16,7 @@
 		A5BF64B91931F8210062721F /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = A5BF64B71931F8210062721F /* MyParticle.sks */; };
 		A5BF64BA1931F8210062721F /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BF64B81931F8210062721F /* spark.png */; };
 		A5BF64BD19320C4B0062721F /* RRCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BF64BC19320C4B0062721F /* RRCloud.m */; };
+		A5BFBD211938B5A700680C92 /* RRDrop.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFBD201938B5A700680C92 /* RRDrop.m */; };
 		A5DBE6E71930D34F001876B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DBE6E61930D34F001876B9 /* Foundation.framework */; };
 		A5DBE6E91930D34F001876B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DBE6E81930D34F001876B9 /* CoreGraphics.framework */; };
 		A5DBE6EB1930D34F001876B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DBE6EA1930D34F001876B9 /* UIKit.framework */; };
@@ -66,6 +67,8 @@
 		A5BF64B81931F8210062721F /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		A5BF64BB19320C4B0062721F /* RRCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRCloud.h; sourceTree = "<group>"; };
 		A5BF64BC19320C4B0062721F /* RRCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRCloud.m; sourceTree = "<group>"; };
+		A5BFBD1F1938B5A700680C92 /* RRDrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDrop.h; sourceTree = "<group>"; };
+		A5BFBD201938B5A700680C92 /* RRDrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDrop.m; sourceTree = "<group>"; };
 		A5DBE6E31930D34F001876B9 /* frogGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frogGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5DBE6E61930D34F001876B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A5DBE6E81930D34F001876B9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -146,6 +149,8 @@
 			children = (
 				A5BF64BB19320C4B0062721F /* RRCloud.h */,
 				A5BF64BC19320C4B0062721F /* RRCloud.m */,
+				A5BFBD1F1938B5A700680C92 /* RRDrop.h */,
+				A5BFBD201938B5A700680C92 /* RRDrop.m */,
 				A5DBE72819311744001876B9 /* RRFrog.h */,
 				A5DBE72919311744001876B9 /* RRFrog.m */,
 				A5BD5C761933CD29003AE760 /* RRSeaGull.h */,
@@ -378,6 +383,7 @@
 				A5BCA86B193721DC0009B9E5 /* RRMainMenu.m in Sources */,
 				A538AAF11938A4A300A07AE3 /* RRGameOver.m in Sources */,
 				A5DBE7021930D34F001876B9 /* RRViewController.m in Sources */,
+				A5BFBD211938B5A700680C92 /* RRDrop.m in Sources */,
 				A5BF64BD19320C4B0062721F /* RRCloud.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

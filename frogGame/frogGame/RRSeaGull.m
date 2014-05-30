@@ -31,7 +31,6 @@
                             repeatActionForever:[SKAction
                                                  sequence:@[animate]]];
     [_node runAction:repeatFly];
-    
 }
 
 - (void) initSeaGull {

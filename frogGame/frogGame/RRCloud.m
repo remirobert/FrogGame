@@ -7,10 +7,13 @@
 //
 
 #import "RRCloud.h"
+#import "RRDrop.h"
 
 @interface RRCloud ()
 @property (nonatomic, assign) CGFloat timerPopDrop;
 @property (nonatomic, assign) CGFloat timerPoisonDrop;
+@property (nonatomic, assign) CGFloat timerMiddleDrop;
+@property (nonatomic, assign) CGFloat timerBigDrop;
 @end
 
 @implementation RRCloud
@@ -50,32 +53,10 @@
         [self initCloud];
         _timerPopDrop = 0.0;
         _timerPoisonDrop = 0.0;
+        _timerMiddleDrop = 0.0;
+        _timerBigDrop = 0.0;
     }
     return (self);
-}
-
-- (SKSpriteNode *) createBlueWaterDrop {
-    SKSpriteNode *drop = [[SKSpriteNode alloc] initWithImageNamed:@"blue_water_drop"];
-    
-    drop.position = CGPointMake((rand() % (int)_cloud.size.width) +
-                                (_cloud.position.x - _cloud.size.width / 2),
-                                [UIScreen mainScreen].bounds.size.width);
-    drop.size = CGSizeMake(drop.size.width / 2, drop.size.height / 2);
-    drop.zPosition = 101;
-    drop.name = @"waterdrop";
-    return (drop);
-}
-
-- (SKSpriteNode *) createRedWaterDrop {
-    SKSpriteNode *drop = [[SKSpriteNode alloc] initWithImageNamed:@"red_water_drop"];
-    
-    drop.position = CGPointMake((rand() % (int)_cloud.size.width) +
-                                (_cloud.position.x - _cloud.size.width / 2),
-                                [UIScreen mainScreen].bounds.size.width);
-    drop.size = CGSizeMake(drop.size.width / 2, drop.size.height / 2);
-    drop.zPosition = 101;
-    drop.name = @"reddrop";
-    return (drop);
 }
 
 - (void) launchWaterDrop:(NSTimeInterval)currentTime
@@ -84,10 +65,12 @@
     if (_timerPopDrop == 0.0 || _timerPoisonDrop == 0.0) {
         _timerPopDrop = (2.0 + (float) (rand()) / ((float)(RAND_MAX / (3.0 - 2.0)))) + currentTime;
         _timerPoisonDrop = (2.5 + (float) (rand()) / ((float)(RAND_MAX / (3.5 - 2.5)))) + currentTime;
+        _timerMiddleDrop = (4 + (float) (rand()) / ((float)(RAND_MAX / (6.5 - 4)))) + currentTime;
+        _timerBigDrop = (6 + (float) (rand()) / ((float)(RAND_MAX / (9 - 6)))) + currentTime;
     }
     
     if (currentTime >= _timerPopDrop) {
-        SKSpriteNode *drop = [self createBlueWaterDrop];
+        SKSpriteNode *drop = [RRDrop createBlueWaterDrop:_cloud];
         
         [parentScene addChild:drop];
         [drop runAction:[SKAction moveToY:0
@@ -99,7 +82,7 @@
     }
     
     if (currentTime >= _timerPoisonDrop) {
-        SKSpriteNode *drop = [self createRedWaterDrop];
+        SKSpriteNode *drop = [RRDrop createRedWaterDrop:_cloud];
         
         [parentScene addChild:drop];
         [drop runAction:[SKAction moveToY:0
@@ -108,6 +91,32 @@
                  [drop removeFromParent];
              }];
         _timerPoisonDrop = (2.5 + (float) (rand()) / ((float)(RAND_MAX / (3.5 - 2.5)))) + currentTime;
+    }
+    
+    if (currentTime >= _timerBigDrop) {
+        if (rand() % 2 == 0) {
+            SKSpriteNode *drop = [RRDrop createBigDropWater:_cloud];
+        
+            [parentScene addChild:drop];
+            [drop runAction:[SKAction moveToY:0
+                                     duration:(1 + (float) (rand()) / ((float)(RAND_MAX / (1.0 - 1))))]
+                 completion:^{
+                     [drop removeFromParent];
+                 }];
+        }
+         _timerBigDrop = (6 + (float) (rand()) / ((float)(RAND_MAX / (9 - 6)))) + currentTime;
+    }
+    
+    if (currentTime >= _timerMiddleDrop) {
+        SKSpriteNode *drop = [RRDrop createMiddleDropWater:_cloud];
+        
+        [parentScene addChild:drop];
+        [drop runAction:[SKAction moveToY:0
+                                 duration:(1 + (float) (rand()) / ((float)(RAND_MAX / (2 - 1))))]
+             completion:^{
+                 [drop removeFromParent];
+             }];
+        _timerMiddleDrop = (4 + (float) (rand()) / ((float)(RAND_MAX / (6.5 - 4)))) + currentTime;
     }
 }
 
