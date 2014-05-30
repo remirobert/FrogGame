@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A538AAE81938A1DB00A07AE3 /* RRGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = A538AAE71938A1DB00A07AE3 /* RRGameData.m */; };
+		A538AAF11938A4A300A07AE3 /* RRGameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = A538AAF01938A4A300A07AE3 /* RRGameOver.m */; };
 		A5BCA86619371B1E0009B9E5 /* RRMyScene+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCA86519371B1E0009B9E5 /* RRMyScene+Collision.m */; };
 		A5BCA86B193721DC0009B9E5 /* RRMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCA86A193721DC0009B9E5 /* RRMainMenu.m */; };
 		A5BD5C781933CD29003AE760 /* RRSeaGull.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BD5C771933CD29003AE760 /* RRSeaGull.m */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		A538AAE61938A1DB00A07AE3 /* RRGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGameData.h; sourceTree = "<group>"; };
 		A538AAE71938A1DB00A07AE3 /* RRGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGameData.m; sourceTree = "<group>"; };
+		A538AAEF1938A4A300A07AE3 /* RRGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRGameOver.h; path = ../RRGameOver.h; sourceTree = "<group>"; };
+		A538AAF01938A4A300A07AE3 /* RRGameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRGameOver.m; path = ../RRGameOver.m; sourceTree = "<group>"; };
 		A5BCA86419371B1E0009B9E5 /* RRMyScene+Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RRMyScene+Collision.h"; sourceTree = "<group>"; };
 		A5BCA86519371B1E0009B9E5 /* RRMyScene+Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RRMyScene+Collision.m"; sourceTree = "<group>"; };
 		A5BCA869193721DC0009B9E5 /* RRMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMainMenu.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 			children = (
 				A5BCA869193721DC0009B9E5 /* RRMainMenu.h */,
 				A5BCA86A193721DC0009B9E5 /* RRMainMenu.m */,
+				A538AAEF1938A4A300A07AE3 /* RRGameOver.h */,
+				A538AAF01938A4A300A07AE3 /* RRGameOver.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				A5BF64B61931EF490062721F /* RRMyScene+Cloud.m in Sources */,
 				A538AAE81938A1DB00A07AE3 /* RRGameData.m in Sources */,
 				A5BCA86B193721DC0009B9E5 /* RRMainMenu.m in Sources */,
+				A538AAF11938A4A300A07AE3 /* RRGameOver.m in Sources */,
 				A5DBE7021930D34F001876B9 /* RRViewController.m in Sources */,
 				A5BF64BD19320C4B0062721F /* RRCloud.m in Sources */,
 			);

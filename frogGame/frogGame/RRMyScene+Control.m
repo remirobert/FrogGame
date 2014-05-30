@@ -8,6 +8,7 @@
 
 #import "RRMyScene+Control.h"
 #import "RRMyScene.h"
+#import "RRGameData.h"
 
 @interface RRMyScene ()
 @end
@@ -15,6 +16,8 @@
 @implementation RRMyScene (Control)
 
 - (void) updatePositionFrog {
+    if ([RRGameData DefaultData].isOver == YES)
+        return ;
     
     if (self.motionManager == nil) {
         self.motionManager = [[CMMotionManager alloc] init];

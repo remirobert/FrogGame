@@ -11,6 +11,7 @@
 @interface RRGameData : NSObject
 
 @property (nonatomic, assign) NSInteger score;
+@property (nonatomic, assign) BOOL isOver;
 
 + (RRGameData *) DefaultData;
 

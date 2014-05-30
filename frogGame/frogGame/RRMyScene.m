@@ -27,7 +27,12 @@
     [self addChild:_frog.collisionBox];
 }
 
--(id)initWithSize:(CGSize)size {    
+- (void) initGameData {
+    [RRGameData DefaultData].score = 0;
+    [RRGameData DefaultData].isOver = NO;
+}
+
+-(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
         SKSpriteNode *bg = [[SKSpriteNode alloc]
@@ -46,8 +51,6 @@
         [self initWave];
                 
         _clouds = [[NSMutableArray alloc] init];
-        
-        [RRGameData DefaultData].score = 0;
     }
     return self;
 }
