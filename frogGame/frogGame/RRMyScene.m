@@ -16,6 +16,7 @@
 
 @interface RRMyScene ()
 @property (nonatomic, strong) NSMutableArray *clouds;
+@property (nonatomic, strong) SKLabelNode *score;
 @end
 
 @implementation RRMyScene
@@ -28,8 +29,21 @@
 }
 
 - (void) initGameData {
-    [RRGameData DefaultData].score = 0;
-    [RRGameData DefaultData].isOver = NO;
+    [[RRGameData DefaultData] setScore:0];
+    [[RRGameData DefaultData] setIsOver:NO];
+}
+
+- (void) displayScore {
+    if (_score == nil) {
+        _score = [[SKLabelNode alloc] init];
+        _score.zPosition = 300;
+        _score.position = CGPointMake([UIScreen mainScreen].bounds.size.height,
+                                      [UIScreen mainScreen].bounds.size.width - 25);
+
+        [_score setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
+        [self addChild:_score];
+    }
+    _score.text = [NSString stringWithFormat:@"%d", [RRGameData DefaultData].score];
 }
 
 -(id)initWithSize:(CGSize)size {
@@ -47,6 +61,7 @@
                                   [UIScreen mainScreen].bounds.size.width / 2);
         [self addChild:bg];
         
+        [self initGameData];
         [self initFrog];
         [self initWave];
                 
@@ -56,6 +71,7 @@
 }
 
 -(void)update:(CFTimeInterval)currentTime {
+    [self displayScore];
     [self updatePositionFrog];
     [self updatePositionWave];
     [self addCloud:currentTime withListClouds:_clouds];

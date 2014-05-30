@@ -94,7 +94,7 @@
     }
     
     if (currentTime >= _timerBigDrop) {
-        if (rand() % 2 == 0) {
+        if (rand() % 3 == 2) {
             SKSpriteNode *drop = [RRDrop createBigDropWater:_cloud];
         
             [parentScene addChild:drop];

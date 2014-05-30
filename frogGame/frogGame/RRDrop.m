@@ -10,18 +10,6 @@
 
 @implementation RRDrop
 
-+ (SKSpriteNode *) createBlueWaterDrop:(SKSpriteNode *)cloud {
-    SKSpriteNode *drop = [[SKSpriteNode alloc] initWithImageNamed:@"blue_water_drop"];
-    
-    drop.position = CGPointMake((rand() % (int)cloud.size.width) +
-                                (cloud.position.x - cloud.size.width / 2),
-                                [UIScreen mainScreen].bounds.size.width);
-    drop.size = CGSizeMake(drop.size.width / 2, drop.size.height / 2);
-    drop.zPosition = 101;
-    drop.name = @"waterdrop";
-    return (drop);
-}
-
 + (SKSpriteNode *) createRedWaterDrop:(SKSpriteNode *)cloud {
     SKSpriteNode *drop = [[SKSpriteNode alloc] initWithImageNamed:@"red_water_drop"];
     
@@ -34,6 +22,18 @@
     return (drop);
 }
 
++ (SKSpriteNode *) createBlueWaterDrop:(SKSpriteNode *)cloud {
+    SKSpriteNode *drop = [[SKSpriteNode alloc] initWithImageNamed:@"blue_water_drop"];
+    
+    drop.position = CGPointMake((rand() % (int)cloud.size.width) +
+                                (cloud.position.x - cloud.size.width / 2),
+                                [UIScreen mainScreen].bounds.size.width);
+    drop.size = CGSizeMake(drop.size.width / 2, drop.size.height / 2);
+    drop.zPosition = 101;
+    drop.name = @"waterdrop";
+    return (drop);
+}
+
 + (SKSpriteNode *) createMiddleDropWater:(SKSpriteNode *)cloud {
     SKSpriteNode *drop = [[SKSpriteNode alloc] initWithImageNamed:@"blue_water_drop"];
     
@@ -42,7 +42,7 @@
                                 [UIScreen mainScreen].bounds.size.width);
     drop.size = CGSizeMake(drop.size.width - 10, drop.size.height - 10);
     drop.zPosition = 101;
-    drop.name = @"waterdrop";
+    drop.name = @"waterdropmiddle";
     return (drop);
 }
 
@@ -54,7 +54,7 @@
                                 [UIScreen mainScreen].bounds.size.width);
     drop.size = CGSizeMake(drop.size.width, drop.size.height);
     drop.zPosition = 101;
-    drop.name = @"waterdrop";
+    drop.name = @"waterdropbig";
     return (drop);
 }
 

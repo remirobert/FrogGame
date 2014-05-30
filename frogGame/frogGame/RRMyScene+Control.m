@@ -16,8 +16,10 @@
 @implementation RRMyScene (Control)
 
 - (void) updatePositionFrog {
-    if ([RRGameData DefaultData].isOver == YES)
+    if ([RRGameData DefaultData].isOver == YES) {
+        NSLog(@"over = YES");
         return ;
+    }
     
     if (self.motionManager == nil) {
         self.motionManager = [[CMMotionManager alloc] init];

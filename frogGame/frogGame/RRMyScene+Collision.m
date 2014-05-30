@@ -12,10 +12,12 @@
 
 @implementation RRMyScene (Collision)
 
-- (void) addPoint {
+- (void) addPoint:(NSInteger)score {
     SKLabelNode *labelPoint = [[SKLabelNode alloc] init];
     
-    labelPoint.text = @"+10";
+    [[RRGameData DefaultData] setScore:[RRGameData DefaultData].score + score];
+    
+    labelPoint.text = [NSString stringWithFormat:@"+%d", score];
     labelPoint.position = CGPointMake(self.frog.collisionBox.position.x,
                                       self.frog.collisionBox.position.y +
                                       self.frog.collisionBox.size.height / 2);
@@ -31,23 +33,32 @@
     }];
 }
 
+- (void) testCollision:(NSInteger)score :(SKNode *)node {
+    if ([node intersectsNode:self.frog.collisionBox] == YES) {
+        [node removeFromParent];
+        
+        if ([self.frog.node actionForKey:@"drinkwater"] == nil)
+            [self.frog.node runAction:[SKAction
+                                       animateWithTextures:@[[SKTexture
+                                                              textureWithImage:[UIImage
+                                                                                imageNamed:@"drinking_water"]]] timePerFrame:0.1 resize:NO restore:YES] withKey:@"drinkwater"];
+        [self addPoint:score];
+    }
+}
+
 - (void) collisionWaterDrop {
     [self enumerateChildNodesWithName:@"waterdrop" usingBlock:^(SKNode *node, BOOL *stop) {
-        
-        if ([node intersectsNode:self.frog.collisionBox] == YES) {
-            [node removeFromParent];
-            
-            [RRGameData DefaultData].score += 1;
-            [self addPoint];
-            
-            if ([self.frog.node actionForKey:@"drinkwater"] == nil)
-                [self.frog.node runAction:[SKAction
-                                           animateWithTextures:@[[SKTexture
-                                                                  textureWithImage:[UIImage
-                                                                                    imageNamed:@"drinking_water"]]] timePerFrame:0.1 resize:NO restore:YES] withKey:@"drinkwater"];
-        }
+        [self testCollision:10 :node];
     }];
     
+    [self enumerateChildNodesWithName:@"waterdropmiddle" usingBlock:^(SKNode *node, BOOL *stop) {
+        [self testCollision:20 :node];
+    }];
+    
+    [self enumerateChildNodesWithName:@"waterdropbig" usingBlock:^(SKNode *node, BOOL *stop) {
+        [self testCollision:30 :node];
+    }];
+
     [self enumerateChildNodesWithName:@"reddrop" usingBlock:^(SKNode *node, BOOL *stop) {
         
         if ([node intersectsNode:self.frog.collisionBox] == YES) {
@@ -55,7 +66,7 @@
             self.speed = 0.0;
             
             NSLog(@"score = %ld", (long)[RRGameData DefaultData].score);
-            [RRGameData DefaultData].isOver = YES;
+            [[RRGameData DefaultData] setIsOver:YES];
             
             RRMainMenu *menu = [[RRMainMenu alloc] initWithSize:self.size];
             [self.view presentScene:menu transition:[SKTransition fadeWithDuration:1.0]];
