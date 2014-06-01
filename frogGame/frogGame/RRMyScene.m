@@ -13,6 +13,7 @@
 #import "RRMyScene+Collision.h"
 #import "RRSeaGull.h"
 #import "RRGameData.h"
+#import "RRMyScene+Enemies.h"
 
 @interface RRMyScene ()
 @property (nonatomic, strong) NSMutableArray *clouds;
@@ -66,6 +67,7 @@
         [self initWave];
                 
         _clouds = [[NSMutableArray alloc] init];
+        _enemies = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -77,6 +79,8 @@
     [self addCloud:currentTime withListClouds:_clouds];
     [self dropWaterDrop:currentTime :_clouds];
     [self collisionWaterDrop];
+    [self releaseEnemie:currentTime];
+    [self mapEnemies];
 }
 
 @end

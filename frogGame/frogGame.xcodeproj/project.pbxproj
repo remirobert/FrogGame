@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A538AAE81938A1DB00A07AE3 /* RRGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = A538AAE71938A1DB00A07AE3 /* RRGameData.m */; };
 		A538AAF11938A4A300A07AE3 /* RRGameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = A538AAF01938A4A300A07AE3 /* RRGameOver.m */; };
+		A5B44F321938E79600427D6F /* RRTimerStrat.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B44F311938E79600427D6F /* RRTimerStrat.m */; };
+		A5B44F351938EB8300427D6F /* RRMyScene+Enemies.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B44F341938EB8300427D6F /* RRMyScene+Enemies.m */; };
 		A5BCA86619371B1E0009B9E5 /* RRMyScene+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCA86519371B1E0009B9E5 /* RRMyScene+Collision.m */; };
 		A5BCA86B193721DC0009B9E5 /* RRMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCA86A193721DC0009B9E5 /* RRMainMenu.m */; };
 		A5BD5C781933CD29003AE760 /* RRSeaGull.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BD5C771933CD29003AE760 /* RRSeaGull.m */; };
@@ -55,6 +57,10 @@
 		A538AAE71938A1DB00A07AE3 /* RRGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGameData.m; sourceTree = "<group>"; };
 		A538AAEF1938A4A300A07AE3 /* RRGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRGameOver.h; path = ../RRGameOver.h; sourceTree = "<group>"; };
 		A538AAF01938A4A300A07AE3 /* RRGameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRGameOver.m; path = ../RRGameOver.m; sourceTree = "<group>"; };
+		A5B44F301938E79600427D6F /* RRTimerStrat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTimerStrat.h; sourceTree = "<group>"; };
+		A5B44F311938E79600427D6F /* RRTimerStrat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTimerStrat.m; sourceTree = "<group>"; };
+		A5B44F331938EB8300427D6F /* RRMyScene+Enemies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RRMyScene+Enemies.h"; sourceTree = "<group>"; };
+		A5B44F341938EB8300427D6F /* RRMyScene+Enemies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RRMyScene+Enemies.m"; sourceTree = "<group>"; };
 		A5BCA86419371B1E0009B9E5 /* RRMyScene+Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RRMyScene+Collision.h"; sourceTree = "<group>"; };
 		A5BCA86519371B1E0009B9E5 /* RRMyScene+Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RRMyScene+Collision.m"; sourceTree = "<group>"; };
 		A5BCA869193721DC0009B9E5 /* RRMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMainMenu.h; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 				A5BF64B51931EF490062721F /* RRMyScene+Cloud.m */,
 				A5BCA86419371B1E0009B9E5 /* RRMyScene+Collision.h */,
 				A5BCA86519371B1E0009B9E5 /* RRMyScene+Collision.m */,
+				A5B44F331938EB8300427D6F /* RRMyScene+Enemies.h */,
+				A5B44F341938EB8300427D6F /* RRMyScene+Enemies.m */,
 			);
 			name = MainScene;
 			sourceTree = "<group>";
@@ -155,6 +163,8 @@
 				A5DBE72919311744001876B9 /* RRFrog.m */,
 				A5BD5C761933CD29003AE760 /* RRSeaGull.h */,
 				A5BD5C771933CD29003AE760 /* RRSeaGull.m */,
+				A5B44F301938E79600427D6F /* RRTimerStrat.h */,
+				A5B44F311938E79600427D6F /* RRTimerStrat.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -375,6 +385,7 @@
 				A5DBE72D19311869001876B9 /* RRMyScene+Wave.m in Sources */,
 				A5BD5C781933CD29003AE760 /* RRSeaGull.m in Sources */,
 				A5DBE72A19311744001876B9 /* RRFrog.m in Sources */,
+				A5B44F351938EB8300427D6F /* RRMyScene+Enemies.m in Sources */,
 				A5DBE6F51930D34F001876B9 /* main.m in Sources */,
 				A5BCA86619371B1E0009B9E5 /* RRMyScene+Collision.m in Sources */,
 				A5DBE7051930D34F001876B9 /* RRMyScene.m in Sources */,
@@ -382,6 +393,7 @@
 				A538AAE81938A1DB00A07AE3 /* RRGameData.m in Sources */,
 				A5BCA86B193721DC0009B9E5 /* RRMainMenu.m in Sources */,
 				A538AAF11938A4A300A07AE3 /* RRGameOver.m in Sources */,
+				A5B44F321938E79600427D6F /* RRTimerStrat.m in Sources */,
 				A5DBE7021930D34F001876B9 /* RRViewController.m in Sources */,
 				A5BFBD211938B5A700680C92 /* RRDrop.m in Sources */,
 				A5BF64BD19320C4B0062721F /* RRCloud.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "RRMyScene+Cloud.h"
 #import "RRCloud.h"
+#import "RRTimerStrat.h"
 
 @implementation RRMyScene (Cloud)
 
@@ -51,7 +52,7 @@
     [self removeNodeCloud:clouds];
     if (currentTime >= timePop) {
         [self newCloud:clouds];
-        timePop = currentTime + (rand() % 2 + 4);
+        timePop = currentTime + [RRTimerStrat getTimerPopCloud];
     }
 }
 

@@ -16,5 +16,6 @@
 @property (nonatomic, strong) SKSpriteNode *wave;
 @property (nonatomic, strong) SKSpriteNode *waveBackground;
 @property (nonatomic, strong) CMMotionManager *motionManager;
+@property (nonatomic, strong) NSMutableArray *enemies;
 
 @end
