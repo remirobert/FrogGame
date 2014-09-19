@@ -1,4 +1,6 @@
 FrogGame
 ========
 
-frogGame iOS 
+First experimentation game development with SpriteKit
+frogGame iOS
+
